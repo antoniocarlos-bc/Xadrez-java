@@ -42,7 +42,7 @@ public class Rook extends ChessPiece{
 	    {
 	    	
 	    	 mat[p.getRow()][p.getColumn()] = true;
-	    	
+	    	 System.out.printf(mat[p.getRow()][p.getColumn()] + "A\n");
 	    }
 	    
 	    //Left 
@@ -60,7 +60,7 @@ public class Rook extends ChessPiece{
 	    {
 	    	
 	    	 mat[p.getRow()][p.getColumn()] = true;
-	    	
+	    	 System.out.printf(mat[p.getRow()][p.getColumn()] + "L\n");
 	    }
 		
 	    //Right
@@ -99,8 +99,15 @@ public class Rook extends ChessPiece{
 	    	 mat[p.getRow()][p.getColumn()] = true;
 	    	
 	    }
-	      
+	      /*
 		
+		for(int i =0; i<8; i++) {
+			for(int j=0; j<8; j++) {
+				System.out.printf(mat[i][j]+ " ");
+			}
+		 System.out.println();
+		}
+		*/
 		return mat;
 	}
 	

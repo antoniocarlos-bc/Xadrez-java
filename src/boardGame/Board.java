@@ -86,7 +86,7 @@ public class Board {
 	
 	public boolean positionExists(Position position)
 	{
-		System.out.println("$");
+		
 		return positionExists(position.getRow(),position.getColumn());
 	}
 	
