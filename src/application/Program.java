@@ -24,24 +24,27 @@ public class Program {
 		while(true) {
 			
 			try {
-			UI.clearScreen();
+		//	UI.clearScreen();
 			UI.printMatch(chessMatch, captured);
 			System.out.println();
 			System.out.println("Source: ");
 			ChessPosition source = UI.readChessPosition(sc);
 			
 			boolean[][] possibleMoves = chessMatch.possibleMoves(source);
-			UI.clearScreen();
+		//	UI.clearScreen();
 			UI.printBoard(chessMatch.getPiece(), possibleMoves);
 			
 			System.out.println();
 			System.out.println("Target: ");
 			ChessPosition target = UI.readChessPosition(sc);
 			
-			ChessPiece capturePiece = chessMatch.performChessMove(source, target);
+			ChessPiece capturedPiece = chessMatch.performChessMove(source, target);
+			if(chessMatch.getCheck()) {
+				System.out.println("CHECK!");
+			}
 		
-			if( capturePiece!= null ) {
-				captured.add(capturePiece);
+			if( capturedPiece!= null ) {
+				captured.add(capturedPiece);
 				}
 			
 			}
@@ -57,11 +60,6 @@ public class Program {
 				sc.nextLine();
 			}
 			
-			catch(RuntimeException e)
-			{
-				System.out.println("Unespected problem.");
-				
 			}
-		}
 	}
 }
